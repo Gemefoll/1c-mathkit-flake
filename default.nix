@@ -26,6 +26,7 @@ pkgs.stdenv.mkDerivation rec {
         cp -r * $out/opt/mathkit
 
         mkdir -p $out/bin
+        mkdir -p $out/share/applications
         makeWrapper $out/opt/mathkit/mathkit.12.0.ru/mathkit.sh $out/bin/mathkit \
         --set JAVA_HOME ${pkgs.jre8} \
         --prefix PATH : ${pkgs.lib.makeBinPath [ pkgs.jre8 ]}
